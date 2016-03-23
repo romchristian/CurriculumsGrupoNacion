@@ -1,0 +1,51 @@
+<ui:composition 
+
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui">
+
+
+    <!-- TOPBAR START -->    
+    <div id="layout-topbar">
+        <div id="layout-topbar-indent">
+            <a id="menu-button"><i class="icon-th-menu"></i></a>
+
+            <a href="#{request.contextPath}/main/curriculo/listado.xhtml" style="position: relative; left: 20px; top: 5px"><p:graphicImage library="img" name="logo.png" height="50"/></a>
+
+            <span class="DispInlBlock Fright" style="margin:10px 10px 0px 0px;">
+                <h:form styleClass="DispInline">
+                    <p:splitButton value="Mi cuenta" icon="fa fa-user" styleClass="White Fs14" appendTo="@this">
+                        <p:menuitem value="Cambiar clave" icon="fa fa-key" outcome="/admin/usuario/cambiarClave"/>
+                        <p:menuitem value="Salir" icon="fa fa-power-off" action="#{autenticador.logout()}"/>
+                    </p:splitButton>
+                </h:form>
+            </span>
+        </div>
+    </div>
+    <!-- TOPBAR END -->
+
+    <!-- TOPMENU START -->
+    <ul id="top-menu">
+        <li style="float:left; border:none;">
+            <a href="#">
+                <i class="icon-vcard Opac80 Fs28"></i><span><span class="Fs16">Bienvenido/a, #{credencial.usuario.nombres}</span></span>
+            </a>
+        </li>
+
+        <li>
+            <a href="#{request.contextPath}/main/curriculo/listado.xhtml?estado=3"><i class="icon-archive Opac80"></i><span><span class="Fs16">Contratos</span> <br/> <span class="Opac50 Fs12">#{curriculoBean.countContratado} curriculums</span></span></a>
+        </li>
+
+        <li>
+            <a href="#{request.contextPath}/main/curriculo/listado.xhtml?estado=2"><i class="icon-paperclip Opac80"></i><span><span class="Fs16">Pre selecionados</span> <br/> <span class="Opac50 Fs12">#{curriculoBean.countPreseleccionado} curriculums</span></span></a>
+        </li>
+        <li>
+            <a href="#{request.contextPath}/main/curriculo/listado.xhtml?estado=1"><i class="icon-plus Opac80"></i><span><span class="Fs16">Nuevos</span> <br/> <span class="Opac50 Fs12">#{curriculoBean.countNuevos} curriculums</span></span></a>
+        </li>
+
+    </ul>
+    <!-- TOPMENU END -->
+
+</ui:composition>

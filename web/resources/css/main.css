@@ -1,0 +1,65 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-dic-2015, 15:25:55
+    Author     : cromero
+*/
+.moduloSeleccionado{
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.BlueLink {
+    color: #29506b;
+}
+
+.fa-rotate-45 {
+    -moz-transform:rotate(45deg);
+    -webkit-transform:rotate(45deg);
+    transform:rotate(45deg);
+}
+
+.ui-selectonemenu .ui-selectonemenu-trigger, .ui-selectcheckboxmenu .ui-selectcheckboxmenu-trigger {
+    background-color:#2D6C8D!important;
+}
+
+.ui-spinner .ui-spinner-up .ui-button-text {
+    background-color:#2D6C8D!important;
+}
+
+.ui-spinner .ui-spinner-down .ui-button-text {
+    background-color:#2D6C8D!important;
+}
+
+.ui-slider-handle {
+    border: solid 1px #2D6C8D!important;
+    background-color: #2D6C8D!important;
+ 
+}
+
+.ui-button {
+    background-color:#2D6C8D;
+
+}
+
+.GreenButton {
+    background-color: #43A047;
+}
+
+.BlueButton {
+    background-color: #0277BD;
+}
+
+.RedButton {
+    background-color: #E53935;
+}
+
+.PurpleButton {
+    background-color: #7E57C2;
+}
+
+.GrayButton {
+    background-color: #455A64;
+}

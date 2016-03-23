@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                template="/WEB-INF/template.xhtml"
+                xmlns:f="http://java.sun.com/jsf/core">
+
+    <ui:define name="content">
+
+
+        <h:form id="formList">
+
+
+            <div class="Container100 ui-fluid">
+                <div class="Card">
+                    <div class="CardTopic">LISTADO DE USUARIOS</div>
+
+                    <div class="Separator"></div>
+                    <div class="EmptyBox20"></div>
+
+                    <div class="ui-grid ui-grid-responsive">
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-11">
+                                
+                            </div>
+                            <div class="ui-grid-col-1">
+                                <p:button id="createButton" value="Nuevo" outcome="nuevo" styleClass="GreenButton Fright"/>
+                            </div>
+                        </div>
+                        <div class="EmptyBox20"></div>
+                        <div class="ui-grid-row">
+                            <div class="ui-grid-col-12">
+                                <p:dataTable value="#{usuarioBean.findAll()}" var="u" paginator="true" rows="20" paginatorPosition="bottom" reflow="true"
+                                             selection="#{usuarioBean.actual}"
+                                             rowKey="#{u.id}"
+                                             selectionMode="single">
+
+                                    <p:ajax event="rowSelect"   update=":formList:createButton"/>
+                                    <p:ajax event="rowUnselect" update=":formList:createButton"/>
+
+
+                                    <p:column headerText="Nombre">
+                                        <p:link outcome="vista" value="#{u.nombres}">
+                                            <f:param name="id" value="#{u.id}"/>
+                                        </p:link>
+                                    </p:column>
+                                    <p:column headerText="Estado">
+                                        <h:outputText value="#{u.estado}"/>
+                                    </p:column>
+                                </p:dataTable>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </h:form>
+
+    </ui:define>
+</ui:composition>
+
